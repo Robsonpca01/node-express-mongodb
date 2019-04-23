@@ -1,2 +1,9 @@
-# node-express-mongodb
-Node with express and mongoose.
+# Node with Express and MongoDB
+
+## Features
+
+* Babel 7
+* Environment Variables
+* Express
+* REST API
+* MongoDB
