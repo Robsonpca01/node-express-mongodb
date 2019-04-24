@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Express } from '../../utils/node-base';
-import UserHandler from '../http/userHandler'
+import UserHandler from '../http/user-handler'
 import UserFactory from '../factories/user-factory'
 
 const router = Router();
