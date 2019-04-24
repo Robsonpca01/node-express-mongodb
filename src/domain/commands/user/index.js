@@ -1,21 +1,22 @@
-import { App } from '../../../node-base';
+import { App } from '../../../utils/node-base';
 import events from '../../enum/events';
 
+const { noContent, success } = events;
 class UserCommand extends App.Command {
   constructor() {
-      console.log('----constructor')
+    console.log('----constructor')
     super();
   }
 
   async execute() {
-      console.log('-----Execute---------')
+    console.log('-----Execute---------')
     try {
-      const data = [];
+      const data = {success: true};
 
-      this.emit('finished', data);
+      this.emit(success, data);
     } catch (error) {
       console.error(error);
-      this.emit('failed', { error });
+      this.emit(noContent, { error });
     }
   }
 }

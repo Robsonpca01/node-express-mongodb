@@ -7,3 +7,8 @@
 * Express
 * REST API
 * MongoDB
+
+
+## TODO lint
+* Add linter
+* Add sample tests

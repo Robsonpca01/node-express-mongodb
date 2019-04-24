@@ -3,8 +3,8 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import express from 'express';
 
-import models, { connectDb } from './models';
-import routes from './routes';
+import models, { connectDb } from './infrastructure/models';
+import routes from './infrastructure/routes';
 
 const app = express();
 

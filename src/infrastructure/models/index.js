@@ -4,7 +4,12 @@ import User from './user';
 import Message from './message';
 
 const connectDb = () => {
-  return mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+  try {
+    return mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+  } catch (error) {
+    return error;
+  }
+  
 };
 
 const models = { User, Message };

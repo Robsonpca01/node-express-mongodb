@@ -1,23 +1,22 @@
-import { Express } from '../../node-base';
+import { Express } from '../../utils/node-base';
 import events from '../../domain/enum/events';
-
-const { noContent } = events;
 
 class UserUidHandler extends Express.Handler {
     setupListeners(command) {
-        console.log('setup listeners')
+      console.log('setup listeners')
       super.setupListeners(command);
-      command.on(noContent, this.onNoContent.bind(this));
+      //command.on('success', this.onSuccess.bind(this));
     }
 
 
-    buildInput() {
-     console.log('-------buildInput--------')
+    buildInput(input) {
+     console.log('-------buildInput--------', input)
     }
     
   
-    onNoContent() {
-      return this.response.sendStatus(204);
+    onSuccess(data) {
+      console.log('---SUCESSO----');
+      return this.response.status(200).json( data );
     }
   }
   

@@ -1,4 +1,4 @@
-import { App } from '../../node-base';
+import { App } from '../../utils/node-base';
 
 const { baseEvents } = App;
 
