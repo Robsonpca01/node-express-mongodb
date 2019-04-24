@@ -1,6 +1,8 @@
 import { Router } from 'express';
-import Handler from './adapter';
 import UserCommand from '../commands/users'
+import { Express } from '../node-base/';
+import UserHandler from '../infrastructure/http/userHandler'
+import UserFactory from '../infrastructure/factories/user-factory'
 
 const router = Router();
 
@@ -8,6 +10,10 @@ const router = Router();
   const users = await req.context.models.User.find();
   return res.send(users);
 }); */
+
+const { adapter } = Express;
+
+router.get('/',  adapter(UserHandler, UserFactory));
 
 router.get('/', new UserCommand().execute);
  
